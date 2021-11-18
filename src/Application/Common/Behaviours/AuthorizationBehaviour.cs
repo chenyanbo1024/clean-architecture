@@ -6,6 +6,11 @@ using MediatR;
 
 namespace CleanArchitecture.Application.Common.Behaviours;
 
+/**
+ * IPipelineBehavior<TRequest, TResponse>: 通过实现这一接口，可以实现在管道中添加自定义的业务逻辑，比如 '权限校验'，并在恰当的时候通过 next()，进入管道下个流程
+ * 这个接口类似于 .Net Core 的中间件
+ */
+
 public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     private readonly ICurrentUserService _currentUserService;
