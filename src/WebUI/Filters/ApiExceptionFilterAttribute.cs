@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace CleanArchitecture.WebUI.Filters;
 
+/**
+ * 通过 ExceptionFilterAttribute 实现全局异常拦截与处理
+ * 在构造函数中注册已知异常，在 override OnException 中对异常进行处理
+ */
+
 public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 {
 
